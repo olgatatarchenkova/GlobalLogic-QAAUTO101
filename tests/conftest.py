@@ -1,4 +1,5 @@
 import pytest
+from modules.api.clients import Github
 
 class User:
 
@@ -23,3 +24,9 @@ def user():
     yield user
 
     user.remove()
+
+
+@pytest.fixture
+def github_api():
+    api = Github()
+    yield api
