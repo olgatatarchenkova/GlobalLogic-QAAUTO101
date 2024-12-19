@@ -1,12 +1,11 @@
-from modules.ui.page_objects import CleanSession
 from selenium.webdriver.common.by import By
 
 
-class LoginPage(CleanSession):
+class LoginPage():
     URL = "https://github.com/login"
 
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, driver) -> None:
+        self.driver = driver
 
     def go_to(self):
         self.driver.get(LoginPage.URL)

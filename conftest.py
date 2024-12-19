@@ -1,5 +1,7 @@
 import pytest
 from modules.api.clients import Github
+from modules.ui.page_objects import CleanBrowserSession
+
 
 class User:
 
@@ -30,3 +32,13 @@ def user():
 def github_api():
     api = Github()
     yield api
+
+
+@pytest.fixture
+def browser_session():
+    session = CleanBrowserSession()
+
+    yield session
+
+    session.close()
+    session.quit()

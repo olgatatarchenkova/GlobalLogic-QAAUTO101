@@ -1,5 +1,6 @@
 import requests
 
+
 class Github:
 
     def get_user(self, username):

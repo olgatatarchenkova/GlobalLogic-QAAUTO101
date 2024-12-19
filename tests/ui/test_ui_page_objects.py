@@ -1,10 +1,10 @@
-from modules.ui.page_objects import LoginPage
 import pytest
+from modules.ui.page_objects import LoginPage
 
 
 @pytest.mark.ui
-def test_check_incorrect_username_page_objects():
-    login_page = LoginPage()
+def test_check_incorrect_username_page_objects(browser_session):
+    login_page = LoginPage(browser_session.driver)
 
     login_page.go_to()
 
