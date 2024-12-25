@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class LoginPage():
+class LoginPage:
     URL = "https://github.com/login"
 
     def __init__(self, driver) -> None:
